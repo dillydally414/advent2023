@@ -1,4 +1,4 @@
-package main
+package day2
 
 import (
 	"advent2023/utils"
@@ -7,8 +7,8 @@ import (
 	"strings"
 )
 
-func main() {
-	utils.Run(part1, part2)
+func GetDay() utils.Day {
+	return utils.NewDay(part1, part2, 2)
 }
 
 func part1(lines []string) any {

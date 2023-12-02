@@ -1,4 +1,4 @@
-package main
+package day1
 
 import (
 	"advent2023/utils"
@@ -7,10 +7,9 @@ import (
 	"strings"
 )
 
-func main() {
-	utils.Run(part1, part2)
+func GetDay() utils.Day {
+	return utils.NewDay(part1, part2, 1)
 }
-
 
 func part1(lines []string) any {
 	sum := 0
@@ -54,10 +53,9 @@ func part2(lines []string) any {
 
 	keys := make([]string, 0, len(numbers))
 	for k := range numbers {
-		keys = append(keys, "(" + k + ")")
+		keys = append(keys, "("+k+")")
 	}
 	regex := regexp.MustCompile(strings.Join(keys, "|"))
-
 
 	for _, line := range lines {
 		var firstDigit string
@@ -67,7 +65,7 @@ func part2(lines []string) any {
 				firstDigit = string(char)
 				break
 			}
-			
+
 			match := regex.Find([]byte(line[:i+1]))
 			if match != nil {
 				firstDigit = numbers[string(match)]
@@ -79,7 +77,7 @@ func part2(lines []string) any {
 			if currChar >= "0" && currChar <= "9" {
 				lastDigit = currChar
 				break
-			} 
+			}
 
 			match := regex.Find([]byte(line[i:]))
 			if match != nil {
