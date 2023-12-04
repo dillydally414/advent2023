@@ -4,6 +4,7 @@ import (
 	"advent2023/day1"
 	"advent2023/day2"
 	"advent2023/day3"
+	"advent2023/day4"
 	"advent2023/utils"
 	"flag"
 	"fmt"
@@ -13,6 +14,7 @@ var days = []utils.Day{
 	day1.GetDay(),
 	day2.GetDay(),
 	day3.GetDay(),
+	day4.GetDay(),
 }
 
 func getDay(day int) utils.Day {
