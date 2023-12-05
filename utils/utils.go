@@ -13,6 +13,14 @@ func Check(e error) {
 	}
 }
 
+// helper function to panic on error and return good value
+func CheckAndReturn[T any](value T, e error) T {
+	if e != nil {
+		panic(e)
+	}
+	return value
+}
+
 type Part func(lines []string) (output any)
 
 type Day struct {
