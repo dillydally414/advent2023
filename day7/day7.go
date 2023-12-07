@@ -90,7 +90,7 @@ func (h hand) handType(jWild bool) string {
 	}
 	maxCount, secondMaxCount := 0, 0
 	for k, v := range frequencies {
-		if k == "J" {
+		if k == "J" && jWild {
 			continue
 		}
 		if v > maxCount {
@@ -100,7 +100,9 @@ func (h hand) handType(jWild bool) string {
 			secondMaxCount = v
 		}
 	}
-	maxCount += frequencies["J"]
+	if jWild {
+		maxCount += frequencies["J"]
+	}
 	switch maxCount {
 	case 1:
 		return "high card"
