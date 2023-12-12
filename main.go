@@ -3,6 +3,7 @@ package main
 import (
 	"advent2023/day1"
 	"advent2023/day10"
+	"advent2023/day11"
 	"advent2023/day2"
 	"advent2023/day3"
 	"advent2023/day4"
@@ -27,6 +28,7 @@ var days = []utils.Day{
 	day8.GetDay(),
 	day9.GetDay(),
 	day10.GetDay(),
+	day11.GetDay(),
 }
 
 func getDay(day int) utils.Day {
